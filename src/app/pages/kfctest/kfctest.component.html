@@ -1,0 +1,54 @@
+<section class="main">
+    <header>
+        <a href="#"><img src="assets/imgs/logo.png" class="logo"></a>
+        <div class="toggle" [ngClass]="{'active': isMenuToggleBtnActive}" (click)="toggleActive()"></div>
+        <ul class="navigation" [ngClass]="{'active': isMenuToggleBtnActive}">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="content">
+        <div class="text">
+            <h2>Its Finger<br>Lickin<span>Good</span></h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima itaque error praesentium optio nisi aperiam illum dicta aliquam laudantium voluptatem provident veniam aliquid facere incidunt nam eius esse autem, suscipit quae officiis eum.
+                Neque labore eum rem, sint est tempore exercitationem facilis? Vel quibusdam accusamus dicta fugiat voluptatem eius hic.</p>
+            <a href="#" class="btn">Order Now</a>
+        </div>
+        <div class="slider">
+            <div class="slides" *ngFor="let imgSrc of imgSrcs;let i = index" [ngClass]="{'active': (i == curImgIndex)}">
+                <img [src]="imgSrc">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="sci">
+            <li>
+                <a href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <div class="prevNext">
+            <p>Always Fresh</p>
+            <span class="prev" (click)="prevImg()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </span>
+            <span class="next" (click)="nextImg()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </span>
+        </div>
+    </div>
+</section>
